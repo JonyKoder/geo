@@ -27,7 +27,7 @@ namespace geo_server.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogInformation(ex.Message);
                 return StatusCode(500, $"Failed to retrieve geodata for address: {address}");
             }
         }
@@ -42,7 +42,7 @@ namespace geo_server.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogInformation(ex.Message);
                 return StatusCode(500, $"Failed to retrieve nearest addresses for latitude: {latitude} and longitude: {longitude}");
             }
         }
