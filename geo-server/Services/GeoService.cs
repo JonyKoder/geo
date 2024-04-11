@@ -17,7 +17,7 @@ namespace geo_server.Services
 
         public async Task<Tuple<double, double>> GetGeoDataByAddress(Address address)
         {
-            var query = $"{OpenStreetMapBaseUrl}/search.html?country={address.Region}&city={address.City}&street={address.Street}";
+            var query = $"{OpenStreetMapBaseUrl}/search?country={address.Region}&city={address.City}&street={address.Street}&format=json&limit=2";
             var request = new HttpRequestMessage(HttpMethod.Get, query);
             request.Headers.Add("User-Agent", ".NET Framework Test Client");
 
